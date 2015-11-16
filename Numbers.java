@@ -1,9 +1,18 @@
 package HomeWork1;
 
-public class Numbers {
+public class Number {
 
-    int value1;
-    int value2;
+    int value;
+    
+    public Number(int value){
+        this.value1 = value;
+    }
+    
+    // int + int = int
+    // Number.sum(Number) -> Number
+    public Number sum(Number other){
+        return new Number(this.value + other.value);
+    }
 
     public void addNumbers(){
         System.out.println("The sum of numbers is " + (value1 + value2));
@@ -18,8 +27,9 @@ public class Numbers {
     }
 
     public void divideNumbers(){
-        if (value2 ==0) System.out.println("Can't calculate the quotient - division by zero");
-        else {
+        if (value2 ==0) {
+            System.out.println("Can't calculate the quotient - division by zero");
+        } else {
             System.out.println("The division result is "+ ((double)value1 / (double)value2));
         }
     }
@@ -33,10 +43,11 @@ public class Numbers {
         factorial(value2);
     }
 
-    void factorial(int value) {
+    private void factorial(int value) {
         long res = 1;
-        if (value == 0) res = 0;
-        else {
+        if (value == 0){ 
+            res = 0;
+        } else {
             for (int i = 1; i <= value; i++) {
                 res = res * i;
             }
